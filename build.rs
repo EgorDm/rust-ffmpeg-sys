@@ -903,10 +903,15 @@ fn main() {
         .clang_args(clang_includes)
         .ctypes_prefix("libc")
         // https://github.com/servo/rust-bindgen/issues/687
+        .blacklist_item("FP_NAN")
         .blacklist_type("FP_NAN")
+        .blacklist_item("FP_INFINITE")
         .blacklist_type("FP_INFINITE")
+        .blacklist_item("FP_ZERO")
         .blacklist_type("FP_ZERO")
+        .blacklist_item("FP_SUBNORMAL")
         .blacklist_type("FP_SUBNORMAL")
+        .blacklist_item("FP_NORMAL")
         .blacklist_type("FP_NORMAL")
         // https://github.com/servo/rust-bindgen/issues/550
         .blacklist_type("max_align_t")
